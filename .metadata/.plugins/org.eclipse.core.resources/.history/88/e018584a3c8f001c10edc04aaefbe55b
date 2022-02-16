@@ -1,0 +1,49 @@
+package com.cmc.app.user.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+import com.cmc.app.user.entity.User;
+import com.cmc.app.user.repository.UserRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	public List<User> findAll(User users) {
+		return (List<User>) userRepository.findAll();
+	}
+	
+	public Optional<User> getUserbyUserId(Long id) {
+		return  userRepository.findById(id);
+	}
+
+	public Optional<User> findById(Long id) {
+		return userRepository.findById(id);
+	}
+
+	public User save(User users) {
+		return userRepository.save(users);
+	}
+	
+	public void delete(Long id) {
+		userRepository.deleteById(id);
+	}
+	
+	/*public User update( Long id) {
+		
+		return null;
+		
+	
+	}*/
+
+}
