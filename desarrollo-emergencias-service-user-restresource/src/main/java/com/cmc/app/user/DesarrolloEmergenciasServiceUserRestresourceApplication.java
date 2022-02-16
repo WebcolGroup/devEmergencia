@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 
-@EntityScan({"com.webcol.selohacen.commons.usuario.entity"})
+@EntityScan({"com.cmc.app.commons.user.entity"})
 @SpringBootApplication
 public class DesarrolloEmergenciasServiceUserRestresourceApplication {
 
