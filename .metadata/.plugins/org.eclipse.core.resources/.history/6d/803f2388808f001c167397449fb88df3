@@ -1,0 +1,1 @@
+INSERT INTO tblauthor (id, enabled, mobil_phone, name) VALUES (NULL, b'1', '3174208855', 'Efrain'), (NULL, b'1', '3128409929', 'Erika');

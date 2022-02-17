@@ -1,0 +1,65 @@
+package com.cmc.app.book.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cmc.app.book.entity.Author;
+import com.cmc.app.book.service.AuthorService;
+
+
+@RestController
+public class AuthorController {
+
+	@Autowired
+	private AuthorService authorService;
+	
+	@GetMapping("/list")
+	public List<Author> findAll(Author users) {
+		return authorService.findAll(users);
+	}
+
+	@GetMapping("/author/{authorId}")
+	public ResponseEntity<Author> getUserbyUserId(@PathVariable("authorId") Long authorId) {
+		Author user = authorService.findById(authorId);
+		if (user == null) {
+			return ResponseEntity.notFound().build();
+		}
+		Author users = authorService.findById(authorId);
+		return ResponseEntity.ok(users);
+	}
+
+	@PostMapping("/save")
+	public Author save(@RequestBody Author users) {
+		return authorService.save(users);
+	}
+
+	@DeleteMapping("/delete/{id}")
+	public void delete(@PathVariable Long id) {
+		authorService.delete(id);
+	}
+
+	@PutMapping("/update/{id}")	
+	public ResponseEntity<?> edit(@RequestBody Author authors, @PathVariable Long id) {
+		
+		Author authorUp = authorService.findById(id);
+		
+		if (authorUp == null) {
+			return ResponseEntity.notFound().build();
+		}
+
+		authorUp.setName(authorUp.getName());
+		
+		authorService.save(authorUp);
+		return ResponseEntity.ok(authors);
+		
+	}
+}

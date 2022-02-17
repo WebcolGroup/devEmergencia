@@ -1,0 +1,9 @@
+package com.cmc.app.book.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cmc.app.book.entity.Gender;
+
+public interface GenderDao extends JpaRepository<Gender, Long> {
+
+}

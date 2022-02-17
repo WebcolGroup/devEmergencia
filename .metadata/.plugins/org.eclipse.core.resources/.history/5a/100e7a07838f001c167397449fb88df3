@@ -1,0 +1,5 @@
+package com.cmc.app.book.service;
+
+public class BookService {
+
+}

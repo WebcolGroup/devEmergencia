@@ -1,0 +1,10 @@
+package com.cmc.app.book.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Author implements Serializable {
+
+}

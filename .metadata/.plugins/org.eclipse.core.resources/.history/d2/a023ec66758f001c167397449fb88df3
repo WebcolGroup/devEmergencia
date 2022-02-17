@@ -1,0 +1,12 @@
+package com.cmc.app.book.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tblbooks")
+public class Book implements Serializable{
+
+}

@@ -1,0 +1,7 @@
+package com.cmc.app.book.dao;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface AuthorDao extends PagingAndSortingRepository<Author, Long> {
+
+}
