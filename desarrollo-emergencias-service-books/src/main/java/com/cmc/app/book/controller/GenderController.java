@@ -58,7 +58,7 @@ public class GenderController {
 			return ResponseEntity.notFound().build();
 		}
 
-		genderUp.setGenderName(genderUp.getGenderName());
+		genderUp.setGenderName(genders.getGenderName());
 
 		genderService.save(genderUp);
 		return ResponseEntity.ok(genders);

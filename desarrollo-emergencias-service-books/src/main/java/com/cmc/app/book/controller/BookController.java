@@ -58,7 +58,7 @@ public class BookController {
 			return ResponseEntity.notFound().build();
 		}
 
-		bookUp.setName(bookUp.getName());
+		bookUp.setName(books.getName());
 
 		bookService.save(bookUp);
 		return ResponseEntity.ok(books);

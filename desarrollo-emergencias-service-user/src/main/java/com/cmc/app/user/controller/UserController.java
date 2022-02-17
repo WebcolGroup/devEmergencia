@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cmc.app.user.entity.User;
 import com.cmc.app.user.service.UserService;
 
-
 @RestController
 @RequestMapping("users")
 public class UserController {
@@ -51,30 +50,30 @@ public class UserController {
 		userService.delete(id);
 	}
 
-	@PutMapping("/updates/{id}")	
+	@PutMapping("/update/{id}")
 	public ResponseEntity<?> edit(@RequestBody User users, @PathVariable Long id) {
-		
+
 		User userUp = userService.findById(id);
-		
+
 		if (userUp == null) {
 			return ResponseEntity.notFound().build();
 		}
 
 		userUp.setName(users.getName());
 		userUp.setSecondName(users.getSecondName());
-		
+
 		userService.save(userUp);
 		return ResponseEntity.ok(users);
-		
+
 	}
-	//se crea update por medio de @Query
-	@PutMapping("/updateq/{id}")	
+
+	// SE CREA UPDATE POR MEDIO DE LA ANOTACION @Query
+	@PutMapping("/updateq/{id}")
 	public void update(@RequestBody User users, @PathVariable Long id) {
-		User userUp = userService.findById(id);	
+		User userUp = userService.findById(id);
 		userUp.setName(users.getName());
-		System.out.print(users.getName());
+
 		userService.update(userUp.getName(), userUp.getSecondName(), id);
-	}	
-	
+	}
 
 }

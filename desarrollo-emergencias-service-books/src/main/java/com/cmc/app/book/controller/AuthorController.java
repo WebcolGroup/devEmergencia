@@ -58,8 +58,8 @@ public class AuthorController {
 			return ResponseEntity.notFound().build();
 		}
 
-		authorUp.setName(authorUp.getName());
-		authorUp.setMobilPhone(authorUp.getMobilPhone());
+		authorUp.setName(authors.getName());
+		authorUp.setMobilPhone(authors.getMobilPhone());
 
 		authorService.save(authorUp);
 		return ResponseEntity.ok(authors);

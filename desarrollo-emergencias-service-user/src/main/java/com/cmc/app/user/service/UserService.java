@@ -47,7 +47,7 @@ public class UserService {
 	}
 
 	public void update(String name, String secondName, Long id) {
-		 //userRepository.setUserInfoById(name, secondName, id);
+		 userRepository.setUserInfoById(name, secondName, id);
 	}
 
 }
