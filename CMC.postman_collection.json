@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "5b6fb863-7cfb-4e6c-b442-660e94a4c5ee",
+		"name": "CMC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Endpoint",
+			"item": [
+				{
+					"name": "listRestresourceId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juan2\",\r\n    \"secondName\": \"Restrepo\",\r\n    \"createAt\": \"2022-02-16T05:00:00.000+00:00\",\r\n    \"enabled\": true,\r\n    \"roles\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ROLE_USER\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8002/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juan22\",\r\n    \"secondName\": \"Restrepo\",\r\n    \"createAt\": \"2022-02-16T05:00:00.000+00:00\",\r\n    \"enabled\": true,\r\n    \"roles\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ROLE_USER\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8002/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listaAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoint2",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/users/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {        \r\n        \"name\": \"Juan\",\r\n        \"secondName\": \"Restrepo\",\r\n        \"createAt\": \"2022-02-16T05:00:00.000+00:00\",\r\n        \"enabled\": true,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 2,\r\n                \"name\": \"ROLE_USER\"\r\n            }\r\n        ]\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/users/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"users",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/users/delete/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"users",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \r\n    \"id\": 2,\r\n        \"name\": \"antonio\",\r\n        \"secondName\": \"Paz\"\r\n        \r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/users/update/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"users",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EndPoint3",
+			"item": [
+				{
+					"name": "Author",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8003/authors/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"authors",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n        \r\n        \"name\": \"Efrain\",\r\n        \"mobilPhone\": \"3174208855\",\r\n        \"enabled\": true,\r\n        \"books\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"Calima Framework\",\r\n                \"createAtBook\": null,\r\n                \"enabled\": true\r\n            }\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/authors/save",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"authors",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Efrain Paz\",\r\n        \"mobilPhone\": \"3174208855\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/authors/update/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"authors",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Book",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8003/books/book/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"books",
+										"book",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"name\": \"Aprenda MVC con Java\",\r\n    \"createAtBook\": \"2022-10-12\",\r\n    \"enabled\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/books/save",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"books",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8003/books/delete/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"books",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"Calima Framework\",\r\n        \"createAtBook\": null,\r\n        \"enabled\": true,\r\n        \"genders\": [\r\n            {\r\n                \"id\": 1,\r\n                \"genderName\": \"Desarrollo de software\",\r\n                \"createAt\": null,\r\n                \"enabled\": true\r\n            }\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/books/save",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"books",
+										"save"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gender",
+					"item": [
+						{
+							"name": "List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"genderName\": \"Patrones de diseño\",\r\n        \"createAt\": null,\r\n        \"enabled\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/genders/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"genders",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"genderName\": \"Patrones de diseño\",\r\n        \"createAt\": \"2022-05-12\",\r\n        \"enabled\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/genders/save",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"genders",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8003/genders/delete/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"genders",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 1,\r\n        \"genderName\": \"Patrones de diseño\",\r\n        \"createAt\": \"2022-05-12\",\r\n        \"enabled\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8003/genders/save",
+									"host": [
+										"localhost"
+									],
+									"port": "8003",
+									"path": [
+										"genders",
+										"save"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "EndPoint4",
+			"item": [
+				{
+					"name": "ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8002/user/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jhon Lopez\",\r\n    \"mobilPhone\": \"3174208855\",\r\n    \"enabled\": true,\r\n    \"books\": [\r\n        {\r\n            \"name\": \"Calima Framework\",\r\n            \"createAtBook\": null,\r\n            \"enabled\": true,\r\n            \"genders\": [\r\n                {\r\n                    \"genderName\": \"Desarrollo de software\",\r\n                    \"createAt\": null,\r\n                    \"enabled\": true\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8005/author/",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"author",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8005/author/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"author",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"name\": \"Jhon Lopez Perez\",\r\n    \"mobilPhone\": \"3174208855\",\r\n    \"enabled\": true,\r\n    \"books\": [\r\n        {\r\n            \"name\": \"Calima Framework\",\r\n            \"createAtBook\": null,\r\n            \"enabled\": true,\r\n            \"genders\": [\r\n                {\r\n                    \"genderName\": \"Desarrollo de software\",\r\n                    \"createAt\": null,\r\n                    \"enabled\": true\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8005/author/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"author",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
