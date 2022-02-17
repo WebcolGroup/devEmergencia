@@ -51,7 +51,7 @@ public class UserController {
 		userService.delete(id);
 	}
 
-	@PutMapping("/update/{id}")	
+	@PutMapping("/updates/{id}")	
 	public ResponseEntity<?> edit(@RequestBody User users, @PathVariable Long id) {
 		
 		User userUp = userService.findById(id);
@@ -60,16 +60,21 @@ public class UserController {
 			return ResponseEntity.notFound().build();
 		}
 
-		userUp.setName(userUp.getName());
+		userUp.setName(users.getName());
+		userUp.setSecondName(users.getSecondName());
 		
 		userService.save(userUp);
 		return ResponseEntity.ok(users);
 		
 	}
-	
-	
-	
-	
+	//se crea update por medio de @Query
+	@PutMapping("/updateq/{id}")	
+	public void update(@RequestBody User users, @PathVariable Long id) {
+		User userUp = userService.findById(id);	
+		userUp.setName(users.getName());
+		System.out.print(users.getName());
+		userService.update(userUp.getName(), userUp.getSecondName(), id);
+	}	
 	
 
 }

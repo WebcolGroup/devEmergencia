@@ -24,11 +24,11 @@ public class UserService {
 		return userRepository.findById(id).orElse(null);
 	}
 
-	/*public User findById(Long id) {
-		return userRepository.findById(id).orElse(null);
-	}*/
-	
-	
+	/*
+	 * public User findById(Long id) { return
+	 * userRepository.findById(id).orElse(null); }
+	 */
+
 	@Transactional(readOnly = true)
 	public User findById(Long id) {
 		return userRepository.findById(id).orElse(null);
@@ -44,6 +44,10 @@ public class UserService {
 
 	public void delete(Long id) {
 		userRepository.deleteById(id);
+	}
+
+	public void update(String name, String secondName, Long id) {
+		 //userRepository.setUserInfoById(name, secondName, id);
 	}
 
 }
