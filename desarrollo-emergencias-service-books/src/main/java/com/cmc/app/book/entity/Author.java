@@ -1,14 +1,18 @@
 package com.cmc.app.book.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +27,26 @@ public class Author implements Serializable {
 	@Column(name = "mobil_phone", length = 15)
 	private String mobilPhone;
 	private Boolean enabled;
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "author_id")
+	private List<Book> books;
+
+	public Author() {
+		this.books = new ArrayList<Book>();
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+
+	public void addBooks(Book books) {
+		this.books.add(books);
+	}
 
 	public Long getId() {
 		return id;

@@ -29,7 +29,7 @@ public class BookController {
 		return bookService.findAll(books);
 	}
 
-	@GetMapping("/books/{booksId}")
+	@GetMapping("/book/{booksId}")
 	public ResponseEntity<Book> getUserbyUserId(@PathVariable("booksId") Long bookId) {
 		Book books = bookService.findById(bookId);
 		if (books == null) {
